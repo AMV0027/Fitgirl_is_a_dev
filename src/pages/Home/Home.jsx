@@ -14,106 +14,136 @@ import {
   FileEdit,
   Search,
   CreditCard,
-  Rocket
+  Rocket,
+  Code,
+  Database,
+  Cpu,
+  Layers,
+  Settings,
+  TestTube,
+  Cloud
 } from 'lucide-react';
 import banner from '../../assets/banner.png'
 
+// Default icons mapping for technologies without specific icons
+const getDefaultIcon = (techName) => {
+  const iconMap = {
+    'HTML': Code,
+    'CSS': Code,
+    'JavaScript': Code,
+    'TailwindCSS': Code,
+    'SASS': Code,
+    'PHP': Code,
+    'Swift': Code,
+    'Flutter': Code,
+    'Python': Code,
+    'Spring': Code,
+    'Solidity': Code,
+    'MySQL': Database,
+    'PostgreSQL': Database,
+    'Supabase': Database,
+    'MongoDB': Database,
+    'YOLO': Cpu,
+    'CNN': Cpu,
+    'RNN': Cpu,
+    'NLP': Cpu,
+    'Common ML Algorithms': Cpu,
+    'OpenAI': Brain,
+    'OpenRouter': Brain,
+    'Hugging Face': Brain,
+    'Grok': Brain,
+    'Ollama': Brain,
+    'RAG': Brain,
+    'CAG': Brain,
+    'Fine-Tuning': Brain,
+    'Model Training': Brain,
+    'Agentic AI': Brain,
+    'Multi-Modal AI': Brain,
+    'n8n': Settings,
+    'Zapier': Settings,
+    'Selenium': Settings,
+    'Unit Testing': TestTube,
+    'Integration Testing': TestTube,
+    'End-to-End Testing': TestTube,
+    'Render.com': Cloud,
+    'Virtual Machines': Cloud
+  };
+  return iconMap[techName] || Code;
+};
+
 const serviceCards = [
   {
-    title: 'Websites',
+    title: 'Web Development',
     description: 'Sleek, scalable, and modern web applications.',
     icon: Globe,
     techIcons: ['react', 'svelte', 'astro', 'php'],
-    tech: ['React', 'Svelte', 'Astro', 'PHP'],
+    tech: ['React.js', 'Svelte', 'Astro', 'HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'SASS', 'PHP'],
+    specialTech: [{ name: 'Tauri V2', tooltip: 'Desktop Environment' }],
     gradient: 'from-blue-500 to-cyan-500'
   },
   {
-    title: 'Mobile Apps',
+    title: 'Mobile App Development',
     description: 'Native mobile experiences for Android and iOS.',
     icon: Smartphone,
     techIcons: ['react', 'android', 'apple'],
-    tech: ['React Native', 'Android', 'iOS'],
+    tech: ['React Native', 'Android', 'Swift', 'Flutter'],
     gradient: 'from-green-500 to-emerald-500'
   },
   {
-    title: 'Desktop Apps',
-    description: 'Fast, secure desktop applications with modern tech.',
-    icon: Monitor,
-    techIcons: ['tauri', 'rust'],
-    tech: ['Tauri.js', 'Rust'],
-    gradient: 'from-purple-500 to-indigo-500'
-  },
-  {
-    title: 'Backend',
+    title: 'Backend Development',
     description: 'Robust server-side solutions for any scale.',
     icon: Server,
     techIcons: ['nodejs', 'python', 'spring'],
-    tech: ['Node.js', 'Python', 'Spring Boot'],
+    tech: ['Node.js', 'Python', 'Spring', 'Solidity'],
     gradient: 'from-yellow-500 to-orange-500'
   },
   {
     title: 'Databases',
     description: 'Scalable data storage and management solutions.',
     icon: Server,
-    techIcons: ['postgresql', 'mysql', 'sqlite', 'redis'],
-    tech: ['PostgreSQL', 'MySQL', 'SQLite', 'Redis'],
+    techIcons: ['mysql', 'postgresql', 'mongodb'],
+    tech: ['MySQL', 'PostgreSQL', 'Supabase', 'MongoDB'],
     gradient: 'from-blue-600 to-indigo-600'
-  },
-  {
-    title: 'Web3',
-    description: 'Blockchain solutions and decentralized applications.',
-    icon: Link,
-    techIcons: ['solidity'],
-    tech: ['Solidity', 'Smart Contracts', 'DApps'],
-    gradient: 'from-purple-600 to-pink-600'
   },
   {
     title: 'Machine Learning',
     description: 'Data-driven solutions for complex problems.',
     icon: Bot,
-    techIcons: ['tensorflow', 'pytorch', 'scikit-learn', 'pandas'],
-    tech: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas'],
+    techIcons: ['tensorflow', 'pytorch'],
+    tech: ['YOLO', 'CNN', 'RNN', 'NLP', 'Common ML Algorithms'],
     gradient: 'from-green-600 to-teal-600'
   },
   {
-    title: 'AI',
+    title: 'Artificial Intelligence',
     description: 'Cutting-edge AI solutions for modern challenges.',
     icon: Brain,
-    techIcons: ['openai', 'huggingface', 'langchain', 'anthropic'],
-    tech: ['OpenAI', 'Hugging Face', 'LangChain', 'Anthropic'],
+    techIcons: ['openai'],
+    tech: ['OpenAI', 'OpenRouter', 'Hugging Face', 'Grok', 'Ollama', 'RAG', 'CAG', 'Fine-Tuning', 'Agentic AI', 'Multi-Modal AI'],
     gradient: 'from-red-500 to-pink-500'
   },
   {
-    title: 'Automation',
+    title: 'Automation & Workflows',
     description: 'Streamline workflows and boost productivity.',
     icon: Zap,
-    techIcons: ['github', 'docker', 'jenkins', 'kubernetes'],
-    tech: ['GitHub Actions', 'Docker', 'Jenkins', 'Kubernetes'],
+    techIcons: ['github', 'docker'],
+    tech: ['n8n', 'Zapier', 'Selenium'],
     gradient: 'from-amber-500 to-orange-500'
-  },
-  {
-    title: 'DevOps',
-    description: 'Streamline development and deployment workflows.',
-    icon: Server,
-    techIcons: ['docker', 'kubernetes', 'jenkins', 'github'],
-    tech: ['Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions'],
-    gradient: 'from-sky-500 to-blue-500'
   },
   {
     title: 'Testing',
     description: 'Comprehensive testing solutions for quality assurance.',
     icon: FileEdit,
-    techIcons: ['jest', 'cypress', 'selenium', 'junit'],
-    tech: ['Jest', 'Cypress', 'Selenium', 'JUnit'],
+    techIcons: ['jest', 'cypress'],
+    tech: ['Unit Testing', 'Integration Testing', 'End-to-End Testing'],
     gradient: 'from-emerald-500 to-green-500'
   },
   {
-    title: 'Cloud',
-    description: 'Scalable cloud infrastructure and solutions.',
-    icon: Globe,
-    techIcons: ['aws', 'azure', 'googlecloud', 'digitalocean'],
-    tech: ['AWS', 'Azure', 'GCP', 'Digital Ocean'],
-    gradient: 'from-violet-500 to-purple-500'
+    title: 'DevOps',
+    description: 'Streamline development and deployment workflows.',
+    icon: Server,
+    techIcons: ['docker', 'jenkins'],
+    tech: ['Jenkins', 'Docker', 'Render.com', 'Virtual Machines'],
+    gradient: 'from-sky-500 to-blue-500'
   }
 ];
 
@@ -242,26 +272,51 @@ function Home() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div className="card-body">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      {React.createElement(service.icon, { size: 40, className: "text-white" })}
+                    <div className="flex items-center justify-start mb-6 gap-3">
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 group-hover:scale-110 transition-transform duration-300`}>
+                        {React.createElement(service.icon, { size: 40, className: "text-white" })}
+                      </div>
+                      <h3 className="card-title text-2xl w-full">{service.title}</h3>
                     </div>
-                    <h3 className="card-title text-2xl mb-6">{service.title}</h3>
                     <div className="flex flex-wrap gap-2 mt-auto">
-                      {service.tech.map((tech, idx) => (
-                        <span
-                          key={tech}
-                          className="badge badge-outline gap-2 py-3 px-4"
-                        >
-                          {service.techIcons?.[idx] && (
+                      {service.tech.map((tech, idx) => {
+                        const techIcon = service.techIcons?.[idx];
+                        const DefaultIcon = getDefaultIcon(tech);
+
+                        return (
+                          <span
+                            key={tech}
+                            className="badge badge-outline gap-2 py-3 px-4"
+                          >
+                            {techIcon ? (
+                              <StackIcon
+                                name={techIcon}
+                                variant="dark"
+                                style={{ width: 16, height: 16 }}
+                                className="opacity-70"
+                              />
+                            ) : (
+                              <DefaultIcon
+                                size={16}
+                                className="opacity-70"
+                              />
+                            )}
+                            {tech}
+                          </span>
+                        );
+                      })}
+                      {service.specialTech?.map((special, idx) => (
+                        <div key={special.name} className="tooltip tooltip-top" data-tip={special.tooltip}>
+                          <span className="badge badge-primary gap-2 py-3 px-4 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 glow-effect">
                             <StackIcon
-                              name={service.techIcons[idx]}
+                              name="tauri"
                               variant="dark"
                               style={{ width: 16, height: 16 }}
-                              className="opacity-70"
+                              className="opacity-90"
                             />
-                          )}
-                          {tech}
-                        </span>
+                            {special.name}
+                          </span>
+                        </div>
                       ))}
                     </div>
                   </div>
