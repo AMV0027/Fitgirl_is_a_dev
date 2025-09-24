@@ -1,32 +1,44 @@
 [
   {
-    "name": "Fitgirl Dev",
-    "github": "fitgirl-dev",
-    "projects": 15,
-    "tagline": "Full-stack developer passionate about building innovative solutions"
-  },
-  {
-    "name": "Sarah Johnson",
-    "github": "sarahj",
-    "projects": 8,
-    "tagline": "Frontend specialist with a love for React and modern UI/UX"
-  },
-  {
-    "name": "Mike Chen",
-    "github": "mikechen-dev",
+    "name": "Harisudhan M",
+    "github": "Harihs14",
     "projects": 12,
-    "tagline": "Backend engineer focused on scalable systems and APIs"
+    "tagline": "Full-stack developer crafting elegant solutions with modern technologies"
   },
   {
-    "name": "Alex Rodriguez",
-    "github": "alexrod",
+    "name": "Rajaneesh R",
+    "github": "r-rajaneesh",
+    "projects": 8,
+    "tagline": "Passionate developer building scalable applications and innovative projects"
+  },
+  {
+    "name": "Arjun Krishna",
+    "github": "",
     "projects": 6,
-    "tagline": "Mobile app developer with expertise in React Native"
+    "tagline": "Creative developer focused on user experience and clean code architecture"
   },
   {
-    "name": "Emma Wilson",
-    "github": "emmawilson",
+    "name": "Jai Karthik",
+    "github": "",
+    "projects": 10,
+    "tagline": "Tech enthusiast developing robust solutions with attention to detail"
+  },
+  {
+    "name": "Gokul",
+    "github": "",
+    "projects": 7,
+    "tagline": "Innovative developer passionate about creating impactful digital experiences"
+  },
+  {
+    "name": "Jai Kishanth",
+    "github": "",
     "projects": 9,
-    "tagline": "DevOps engineer automating deployment and infrastructure"
+    "tagline": "Dedicated developer building efficient and maintainable software solutions"
+  },
+  {
+    "name": "Nagasanthoshini",
+    "github": "",
+    "projects": 5,
+    "tagline": "Skilled developer crafting beautiful interfaces and seamless user interactions"
   }
 ]
