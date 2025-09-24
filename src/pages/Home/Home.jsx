@@ -1,151 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Stats from './Stats';
-import StackIcon from 'tech-stack-icons';
+import WhatWeBuild from '../../components/WhatWeBuild/WhatWeBuild';
 import {
-  Globe,
-  Smartphone,
-  Monitor,
-  Server,
-  Link,
-  Brain,
-  Bot,
-  Zap,
   FileEdit,
   Search,
   CreditCard,
-  Rocket,
-  Code,
-  Database,
-  Cpu,
-  Layers,
-  Settings,
-  TestTube,
-  Cloud
+  Rocket
 } from 'lucide-react';
 import banner from '../../assets/banner.png'
 
-// Default icons mapping for technologies without specific icons
-const getDefaultIcon = (techName) => {
-  const iconMap = {
-    'HTML': Code,
-    'CSS': Code,
-    'JavaScript': Code,
-    'TailwindCSS': Code,
-    'SASS': Code,
-    'PHP': Code,
-    'Swift': Code,
-    'Flutter': Code,
-    'Python': Code,
-    'Spring': Code,
-    'Solidity': Code,
-    'MySQL': Database,
-    'PostgreSQL': Database,
-    'Supabase': Database,
-    'MongoDB': Database,
-    'YOLO': Cpu,
-    'CNN': Cpu,
-    'RNN': Cpu,
-    'NLP': Cpu,
-    'Common ML Algorithms': Cpu,
-    'OpenAI': Brain,
-    'OpenRouter': Brain,
-    'Hugging Face': Brain,
-    'Grok': Brain,
-    'Ollama': Brain,
-    'RAG': Brain,
-    'CAG': Brain,
-    'Fine-Tuning': Brain,
-    'Model Training': Brain,
-    'Agentic AI': Brain,
-    'Multi-Modal AI': Brain,
-    'n8n': Settings,
-    'Zapier': Settings,
-    'Selenium': Settings,
-    'Unit Testing': TestTube,
-    'Integration Testing': TestTube,
-    'End-to-End Testing': TestTube,
-    'Render.com': Cloud,
-    'Virtual Machines': Cloud
-  };
-  return iconMap[techName] || Code;
-};
-
-const serviceCards = [
-  {
-    title: 'Web Development',
-    description: 'Sleek, scalable, and modern web applications.',
-    icon: Globe,
-    techIcons: ['react', 'svelte', 'astro', 'php'],
-    tech: ['React.js', 'Svelte', 'Astro', 'HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'SASS', 'PHP'],
-    specialTech: [{ name: 'Tauri V2', tooltip: 'Desktop Environment' }],
-    gradient: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'Mobile App Development',
-    description: 'Native mobile experiences for Android and iOS.',
-    icon: Smartphone,
-    techIcons: ['react', 'android', 'apple'],
-    tech: ['React Native', 'Android', 'Swift', 'Flutter'],
-    gradient: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'Backend Development',
-    description: 'Robust server-side solutions for any scale.',
-    icon: Server,
-    techIcons: ['nodejs', 'python', 'spring'],
-    tech: ['Node.js', 'Python', 'Spring', 'Solidity'],
-    gradient: 'from-yellow-500 to-orange-500'
-  },
-  {
-    title: 'Databases',
-    description: 'Scalable data storage and management solutions.',
-    icon: Server,
-    techIcons: ['mysql', 'postgresql', 'mongodb'],
-    tech: ['MySQL', 'PostgreSQL', 'Supabase', 'MongoDB'],
-    gradient: 'from-blue-600 to-indigo-600'
-  },
-  {
-    title: 'Machine Learning',
-    description: 'Data-driven solutions for complex problems.',
-    icon: Bot,
-    techIcons: ['tensorflow', 'pytorch'],
-    tech: ['YOLO', 'CNN', 'RNN', 'NLP', 'Common ML Algorithms'],
-    gradient: 'from-green-600 to-teal-600'
-  },
-  {
-    title: 'Artificial Intelligence',
-    description: 'Cutting-edge AI solutions for modern challenges.',
-    icon: Brain,
-    techIcons: ['openai'],
-    tech: ['OpenAI', 'OpenRouter', 'Hugging Face', 'Grok', 'Ollama', 'RAG', 'CAG', 'Fine-Tuning', 'Agentic AI', 'Multi-Modal AI'],
-    gradient: 'from-red-500 to-pink-500'
-  },
-  {
-    title: 'Automation & Workflows',
-    description: 'Streamline workflows and boost productivity.',
-    icon: Zap,
-    techIcons: ['github', 'docker'],
-    tech: ['n8n', 'Zapier', 'Selenium'],
-    gradient: 'from-amber-500 to-orange-500'
-  },
-  {
-    title: 'Testing',
-    description: 'Comprehensive testing solutions for quality assurance.',
-    icon: FileEdit,
-    techIcons: ['jest', 'cypress'],
-    tech: ['Unit Testing', 'Integration Testing', 'End-to-End Testing'],
-    gradient: 'from-emerald-500 to-green-500'
-  },
-  {
-    title: 'DevOps',
-    description: 'Streamline development and deployment workflows.',
-    icon: Server,
-    techIcons: ['docker', 'jenkins'],
-    tech: ['Jenkins', 'Docker', 'Render.com', 'Virtual Machines'],
-    gradient: 'from-sky-500 to-blue-500'
-  }
-];
 
 const steps = [
   {
@@ -161,10 +25,10 @@ const steps = [
     gradient: 'from-green-500 to-emerald-500'
   },
   {
-    title: 'Pay 50%',
-    description: 'Initial payment',
-    icon: CreditCard,
-    gradient: 'from-yellow-500 to-orange-500'
+    title: 'Pre-payment',
+    description: 'Initial amount to Begin',
+    icon: Search,
+    gradient: 'from-green-500 to-emerald-500'
   },
   {
     title: 'Develop',
@@ -255,77 +119,7 @@ function Home() {
       </section>
 
       {/* What We Build Section */}
-      <section className="py-20 px-4 bg-base-200/50">
-        <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-6">What We Build</h2>
-            <p className="text-xl text-center text-base-content/70 mb-16 max-w-2xl mx-auto">
-              From web applications to AI solutions, we craft modern software solutions across various domains.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {serviceCards.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  className="card bg-base-100 hover:shadow-xl transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-start mb-6 gap-3">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 group-hover:scale-110 transition-transform duration-300`}>
-                        {React.createElement(service.icon, { size: 40, className: "text-white" })}
-                      </div>
-                      <h3 className="card-title text-2xl w-full">{service.title}</h3>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {service.tech.map((tech, idx) => {
-                        const techIcon = service.techIcons?.[idx];
-                        const DefaultIcon = getDefaultIcon(tech);
-
-                        return (
-                          <span
-                            key={tech}
-                            className="badge badge-outline gap-2 py-3 px-4"
-                          >
-                            {techIcon ? (
-                              <StackIcon
-                                name={techIcon}
-                                variant="dark"
-                                style={{ width: 16, height: 16 }}
-                                className="opacity-70"
-                              />
-                            ) : (
-                              <DefaultIcon
-                                size={16}
-                                className="opacity-70"
-                              />
-                            )}
-                            {tech}
-                          </span>
-                        );
-                      })}
-                      {service.specialTech?.map((special, idx) => (
-                        <div key={special.name} className="tooltip tooltip-top" data-tip={special.tooltip}>
-                          <span className="badge badge-primary gap-2 py-3 px-4 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 glow-effect">
-                            <StackIcon
-                              name="tauri"
-                              variant="dark"
-                              style={{ width: 16, height: 16 }}
-                              className="opacity-90"
-                            />
-                            {special.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhatWeBuild />
 
       {/* Stats Section */}
       <Stats />
@@ -333,45 +127,89 @@ function Home() {
       {/* How It Works Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-base-200 to-base-300">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-16">How It Works</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7 gap-4 md:gap-6">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={step.title}
-                  className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity duration-300"
-                    style={{ backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }}
-                    data-gradient={step.gradient}></div>
-                  <div className="card-body items-center text-center relative z-10">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} p-3 mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
-                      {step.isAnimated ? (
+            <div className="relative">
+              {/* Horizontal Flow Container */}
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 overflow-x-scroll pb-4">
+                {steps.map((step, index) => (
+                  <React.Fragment key={step.title}>
+                    {/* Step Card */}
+                    <motion.div
+                      className="flex flex-col items-center text-center relative z-10"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      {/* Step Number */}
+                      <div className="w-8 h-8 rounded-full bg-primary text-primary-content font-bold text-md flex items-center justify-center mb-4 shadow-lg absolute top-0 left-4">
+                        {index + 1}
+                      </div>
+
+                      {/* Icon Container */}
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.gradient} p-4 mb-4 shadow-xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
+                        {step.isAnimated ? (
+                          <motion.div
+                            animate={{
+                              y: [0, -8, 0],
+                              rotate: [0, 5, -5, 0]
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          >
+                            {React.createElement(step.icon, { size: 40, className: "text-white" })}
+                          </motion.div>
+                        ) : (
+                          React.createElement(step.icon, { size: 40, className: "text-white" })
+                        )}
+                      </div>
+
+                      {/* Content */}
+                      <div className="bg-base-100 rounded-xl p-4 shadow-lg min-w-[200px] max-w-[250px]">
+                        <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                        <p className="text-sm text-base-content/70">{step.description}</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Connecting Arrow (except for last item) */}
+                    {index < steps.length - 1 && (
+                      <div className="hidden lg:block flex-shrink-0">
                         <motion.div
-                          animate={{
-                            y: [0, -8, 0],
-                            rotate: [0, 5, -5, 0]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
+                          className="flex items-center"
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          animate={{ opacity: 1, scaleX: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                         >
-                          {React.createElement(step.icon, { size: 32, className: "text-white" })}
+                          {/* Arrow Line */}
+                          <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary"></div>
+                          {/* Arrow Head */}
+                          <div className="w-0 h-0 border-l-[8px] border-l-secondary border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
                         </motion.div>
-                      ) : (
-                        React.createElement(step.icon, { size: 32, className: "text-white" })
-                      )}
-                    </div>
-                    <h3 className="card-title text-lg font-bold">{step.title}</h3>
-                    <p className="text-sm text-base-content/70">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              {/* Mobile Vertical Flow Lines */}
+              <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-6 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-primary opacity-30"></div>
+
+              {/* Mobile Vertical Arrows */}
+              <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2">
+                {steps.slice(0, -1).map((_, index) => (
+                  <motion.div
+                    key={`mobile-arrow-${index}`}
+                    className="absolute w-0 h-0 border-l-[6px] border-l-primary border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"
+                    style={{ top: `${(index + 1) * 14.28}%` }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -385,7 +223,7 @@ function Home() {
             <p className="text-xl text-center text-base-content/70 mb-16 max-w-2xl mx-auto">
               Choose the perfect plan for your project needs. All plans include source code, documentation, and deployment guide.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <motion.div
                 className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
@@ -396,7 +234,7 @@ function Home() {
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2">Mini Project</h3>
                     <div className="badge badge-ghost mb-4">Perfect for Beginners</div>
-                    <p className="text-4xl font-bold mb-2">₹3,000</p>
+                    <p className="text-4xl font-bold mb-2">₹4,000</p>
                     <p className="text-base-content/70 mb-6">One-time payment</p>
                   </div>
                   <div className="space-y-4 mb-8">
@@ -424,6 +262,12 @@ function Home() {
                       </svg>
                       <span>7 Days Support</span>
                     </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Unlimited Reviews</span>
+                    </div>
                   </div>
                   <div className="card-actions justify-center mt-auto">
                     <a
@@ -439,17 +283,19 @@ function Home() {
               </motion.div>
 
               <motion.div
-                className="card bg-primary text-primary-content shadow-xl hover:shadow-2xl transition-all duration-300 scale-105"
+                className="card bg-primary text-primary-content shadow-xl hover:shadow-2xl transition-all duration-300 scale-105 relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
+                <div className="absolute top-4 right-4 z-10">
+                  <div className="badge badge-secondary px-2"><span className='hidden md:block'>Most{" "}</span> Popular</div>
+                </div>
                 <div className="card-body">
                   <div className="text-center">
-                    <div className="badge badge-secondary mb-4">Most Popular</div>
                     <h3 className="text-2xl font-bold mb-2">Major Project</h3>
-                    <p className="text-4xl font-bold mb-2">₹5,000</p>
-                    <p className="opacity-90 mb-6">One-time payment</p>
+                    <p className="text-4xl font-bold mb-2">Let's Discuss</p>
+                    <p className="opacity-90 mb-6">Custom pricing</p>
                   </div>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-2">
@@ -480,13 +326,43 @@ function Home() {
                       <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>15 Days Support</span>
+                      <span>AI/ML Integration</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Blockchain/Smart Contracts</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Custom Architecture</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span>Deployment Setup</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>30 Days Support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Priority Support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Unlimited Reviews</span>
                     </div>
                   </div>
                   <div className="card-actions justify-center mt-auto">
@@ -497,64 +373,6 @@ function Home() {
                       className="btn btn-secondary btn-block"
                     >
                       Get Started
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <div className="card-body">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-2">Custom AI/Web3</h3>
-                    <div className="badge badge-ghost mb-4">Enterprise Grade</div>
-                    <p className="text-2xl font-bold mb-2">Custom Quote</p>
-                    <p className="text-base-content/70 mb-6">Project-based pricing</p>
-                  </div>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>AI/ML Integration</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Blockchain/Smart Contracts</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Custom Architecture</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>30 Days Support</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Priority Support</span>
-                    </div>
-                  </div>
-                  <div className="card-actions justify-center mt-auto">
-                    <a
-                      href="https://forms.gle/UemJF5oCFmtYb8Bf7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary btn-block"
-                    >
-                      Contact Us
                     </a>
                   </div>
                 </div>

@@ -22,11 +22,17 @@ function Stats() {
     <section className="lg:py-20 py-6 px-4">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Our Impact</h2>
+            <p className="text-xl text-base-content/70 max-w-2xl mx-auto">
+              Numbers that showcase our commitment to delivering quality projects and supporting students worldwide.
+            </p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {statsData.stats.map((stat, index) => (
               <motion.div
                 key={stat.title}
-                className="card bg-base-100 hover:shadow-xl transition-all duration-300"
+                className={`card bg-base-100 hover:shadow-xl transition-all duration-300`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
