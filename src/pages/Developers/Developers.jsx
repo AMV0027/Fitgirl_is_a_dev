@@ -8,9 +8,9 @@ function Developers() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero h-screen bg-base-200">
+      <section className="hero py-12 pt-22 bg-base-200">
         <div className="hero-content text-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xh -full">
             <motion.h1
               className="text-5xl font-bold mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ function Developers() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Be part of Fitgirl is aDev, a community-driven dev collective where student ideas become real software projects! Work on web, mobile, desktop, AI/ML, Web3, and automation projects.
+              Join Fitgirl is a Dev and build real projects with other students.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

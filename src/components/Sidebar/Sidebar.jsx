@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FileEdit, Mail, Users, X, Sun, Moon } from 'lucide-react';
+import { FileEdit, Mail, Users, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from '../../assets/logo.png';
 
-function Sidebar({ isOpen, onClose, theme, onThemeToggle }) {
+function Sidebar({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -30,7 +31,7 @@ function Sidebar({ isOpen, onClose, theme, onThemeToggle }) {
               <div className="p-4 border-b border-base-200">
                 <div className="flex items-center justify-between mb-2">
                   <Link to="/" className="flex items-center gap-2" onClick={onClose}>
-                    <img src="/src/assets/logo.png" alt="Logo" className="w-8 h-8" />
+                    <img src={Logo} alt="Logo" className="w-8 h-8" />
                     <span className="text-lg font-medium">Fitgirl is a Dev</span>
                   </Link>
                   <button
@@ -75,27 +76,6 @@ function Sidebar({ isOpen, onClose, theme, onThemeToggle }) {
                 </div>
               </div>
 
-              {/* Footer */}
-              <div className="p-4 border-t border-base-200">
-                <button
-                  className="btn btn-ghost w-full justify-start gap-2 normal-case"
-                  onClick={() => {
-                    onThemeToggle();
-                  }}
-                >
-                  {theme === 'light' ? (
-                    <>
-                      <Moon className="h-5 w-5" />
-                      Dark Mode
-                    </>
-                  ) : (
-                    <>
-                      <Sun className="h-5 w-5" />
-                      Light Mode
-                    </>
-                  )}
-                </button>
-              </div>
             </div>
           </motion.div>
         </>

@@ -141,7 +141,7 @@ const serviceCards = [
 
 function WhatWeBuild() {
   return (
-    <section className="py-20 px-4 bg-base-200/50">
+    <section className="py-10 md:py-20 px-4 bg-base-200/ border-t-2 border-b-2 border-gray-500/50">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-6">What We Build</h2>
@@ -149,10 +149,10 @@ function WhatWeBuild() {
             From web applications to AI solutions, we craft modern software solutions across various domains.
           </p>
           <div className="overflow-x-auto">
-            <table className="table w-full border border-base-400">
+            <table className="table w-full border border-gray-500/50">
               <thead>
-                <tr className="border-b border-base-300">
-                  <th className="border-r border-base-300 text-lg">Service</th>
+                <tr className="border-b border-gray-500/50">
+                  <th className="border-r border-gray-500/50 text-lg">Service</th>
                   <th className="text-lg">Technologies</th>
                 </tr>
               </thead>
@@ -160,12 +160,12 @@ function WhatWeBuild() {
                 {serviceCards.map((service, index) => (
                   <motion.tr
                     key={service.title}
-                    className="hover:bg-base-200 transition-colors duration-200 border-b border-base-300"
+                    className="hover:bg-base-200 transition-colors duration-200 border-b border-gray-500/50"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <td className="border-r border-base-300">
+                    <td className="border-r border-gray-500/50">
                       <h3 className="font-semibold text-md">{service.title}</h3>
                     </td>
                     <td className="text-md">

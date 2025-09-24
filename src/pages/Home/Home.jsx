@@ -8,7 +8,9 @@ import {
   CreditCard,
   Rocket
 } from 'lucide-react';
-import banner from '../../assets/banner.png'
+import Fitgirl from '../../assets/fitgirl-front.png';
+import Bannerbg from '../../assets/fitgirl-bg-banner.png';
+import { FaDiscord } from "react-icons/fa6";
 
 
 const steps = [
@@ -62,7 +64,7 @@ function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="h-screen bg-base-200 flex items-center justify-center">
-        <div className="max-w-6xl p-4 mx-auto flex flex-col items-center justify-between gap-16">
+        <div className="max-w-6xl p-4 mx-auto flex flex-col items-center justify-between gap-10 md:gap-6 ">
           <div className="w-full order-2 lg:order-1">
             <motion.h1
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
@@ -108,12 +110,29 @@ function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative w-full h-[260px] rounded-lg overflow-hidden flex items-center justify-center"
           >
             <img
-              src={banner}
+              src={Bannerbg}
               alt="FitGirl is a Dev Banner"
-              className="w-full object-cover min-h-[230px] rounded-lg"
+              className="absolute top-0 left-0 w-full object-cover h-full rounded-lg z-10"
             />
+            <img
+              src={Fitgirl}
+              alt="FitGirl is a Dev Banner"
+              className="relative w-auto object-center h-[260px] rounded-lg z-20"
+            />
+            <div className='absolute md:relative z-20 bottom-4 right-4'>
+              <h2 className='text-2xl md:text-4xl font-semibold text-white'>
+                Fitgirl is a Dev
+              </h2>
+              <a href="https://discord.gg/Z2YhDh27" target='_blank' rel='noopener noreferrer'>
+                <p className='flex flex-row items-center text-white text-md md:text-xl gap-1 underline'>
+                  <FaDiscord className='w-6 h-6 text-white' />
+                  Discord Community
+                </p>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -234,8 +253,8 @@ function Home() {
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2">Mini Project</h3>
                     <div className="badge badge-ghost mb-4">Perfect for Beginners</div>
-                    <p className="text-4xl font-bold mb-2">₹4,000</p>
-                    <p className="text-base-content/70 mb-6">One-time payment</p>
+                    <p className="text-4xl font-bold mb-2">₹1,500</p>
+                    <p className="text-base-content/70 mb-6">Starting from</p>
                   </div>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-2">
@@ -386,23 +405,23 @@ function Home() {
       <section className="py-20 px-4 bg-base-200">
         <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-8">About Fitgirl Dev</h2>
+            <div className="max-w-4xl mx-auto text-justify md:text-center">
+              <h2 className="text-4xl font-bold mb-8">About Fitgirl is a Dev</h2>
               <motion.p
-                className="text-xl mb-12"
+                className="text-xl mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                We're a collective of passionate developers specializing in building real-world software projects for students, startups, and communities. Not just demo code - production-grade projects you can present, deploy, and extend.
+                <span>&nbsp;&nbsp;</span>We're a collective of passionate developers specializing in building real-world software projects for students, startups, and communities. Not just demo code - production-grade projects you can present, deploy, and extend.
               </motion.p>
               <motion.p
-                className="text-xl mb-12"
+                className="text-xl mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Fitgirl is a Dev Community is more than a dev studio, we're building a student-first innovation & Hustling community.
+                <span>&nbsp;&nbsp;</span>Fitgirl is a Dev Community is more than a dev studio, we're building a student-first innovation & Hustling community.
               </motion.p>
               <motion.div
                 className="flex justify-center"

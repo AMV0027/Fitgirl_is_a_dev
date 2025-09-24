@@ -41,7 +41,7 @@ function Contact() {
                       className="btn btn-primary btn-lg w-full flex items-center gap-3 normal-case"
                     >
                       <Phone className="h-5 w-5" />
-                      Call Us (+91 82205 57520)
+                      Call Support
                     </a>
 
                     <a

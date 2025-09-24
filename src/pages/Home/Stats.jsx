@@ -19,12 +19,12 @@ const gradientMap = {
 
 function Stats() {
   return (
-    <section className="lg:py-20 py-6 px-4">
+    <section className="py-10 md:py-20">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Impact</h2>
-            <p className="text-xl text-base-content/70 max-w-2xl mx-auto">
+            <p className="text-xl text-base-content/70 max-w-2xl mx-auto px-4 md:px-0">
               Numbers that showcase our commitment to delivering quality projects and supporting students worldwide.
             </p>
           </div>
@@ -38,7 +38,7 @@ function Stats() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="card-body text-center">
-                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${gradientMap[stat.title]} p-3 mb-4 transform transition-transform duration-300 group-hover:scale-110`}>
+                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${gradientMap[stat.title]} p-3 mb-2 transform transition-transform duration-300 group-hover:scale-110`}>
                     {React.createElement(iconMap[stat.title], {
                       size: 40,
                       className: "text-white"
@@ -58,7 +58,7 @@ function Stats() {
                     {stat.value}
                   </motion.h3>
                   <h4 className="text-lg md:text-xl font-semibold mb-2">{stat.title}</h4>
-                  <p className="text-base-content/70 text-sm md:text-base">{stat.description}</p>
+                  {/* <p className="text-base-content/70 text-sm md:text-base">{stat.description}</p> */}
                 </div>
               </motion.div>
             ))}
