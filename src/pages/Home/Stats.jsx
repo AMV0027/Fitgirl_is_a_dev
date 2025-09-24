@@ -1,38 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Users, UserPlus } from 'lucide-react';
+import { Code2, Users, Brain, Rocket } from 'lucide-react';
+import statsData from '../../assets/stats.json';
 
-const stats = [
-  {
-    title: 'Projects Completed',
-    value: '150+',
-    icon: Code2,
-    description: 'Successful deliveries',
-    gradient: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'Active Developers',
-    value: '50+',
-    icon: UserPlus,
-    description: 'Skilled contributors',
-    gradient: 'from-purple-500 to-pink-500'
-  },
-  {
-    title: 'Community Members',
-    value: '500+',
-    icon: Users,
-    description: 'Growing discord family',
-    gradient: 'from-amber-500 to-orange-500'
-  }
-];
+const iconMap = {
+  "Projects Delivered": Code2,
+  "Happy Students": Users,
+  "Technologies": Brain,
+  "Team Size": Rocket
+};
+
+const gradientMap = {
+  "Projects Delivered": "from-blue-500 to-cyan-500",
+  "Happy Students": "from-purple-500 to-pink-500",
+  "Technologies": "from-green-500 to-emerald-500",
+  "Team Size": "from-amber-500 to-orange-500"
+};
 
 function Stats() {
   return (
-    <section className="py-20 px-4">
+    <section className="lg:py-20 py-6 px-4">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {statsData.stats.map((stat, index) => (
               <motion.div
                 key={stat.title}
                 className="card bg-base-100 hover:shadow-xl transition-all duration-300"
@@ -41,14 +32,14 @@ function Stats() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="card-body text-center">
-                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${stat.gradient} p-3 mb-4 transform transition-transform duration-300 group-hover:scale-110`}>
-                    {React.createElement(stat.icon, {
+                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${gradientMap[stat.title]} p-3 mb-4 transform transition-transform duration-300 group-hover:scale-110`}>
+                    {React.createElement(iconMap[stat.title], {
                       size: 40,
                       className: "text-white"
                     })}
                   </div>
                   <motion.h3
-                    className="text-4xl font-bold mb-2"
+                    className="text-3xl md:text-4xl font-bold mb-2"
                     initial={{ scale: 0.5 }}
                     animate={{ scale: 1 }}
                     transition={{
@@ -60,8 +51,8 @@ function Stats() {
                   >
                     {stat.value}
                   </motion.h3>
-                  <h4 className="text-xl font-semibold mb-2">{stat.title}</h4>
-                  <p className="text-base-content/70">{stat.description}</p>
+                  <h4 className="text-lg md:text-xl font-semibold mb-2">{stat.title}</h4>
+                  <p className="text-base-content/70 text-sm md:text-base">{stat.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -73,4 +64,3 @@ function Stats() {
 }
 
 export default Stats;
-

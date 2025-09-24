@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MessageSquare, Github } from 'lucide-react';
+import { BsWhatsapp } from 'react-icons/bs';
 
 function Contact() {
   return (
@@ -25,102 +26,65 @@ function Contact() {
               Have questions about our services? Want to discuss your project? We're here to help!
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Contact Form */}
-              <motion.div
-                className="card bg-base-100 shadow-xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="card-body">
-                  <h2 className="card-title mb-6">Send us a Message</h2>
-                  <form className="space-y-4">
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text">Name</span>
-                      </label>
-                      <input type="text" placeholder="Your name" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text">Email</span>
-                      </label>
-                      <input type="email" placeholder="Your email" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text">Message</span>
-                      </label>
-                      <textarea className="textarea textarea-bordered h-32" placeholder="Your message"></textarea>
-                    </div>
-                    <button type="submit" className="btn btn-primary w-full">
-                      Send Message
-                    </button>
-                  </form>
-                </div>
-              </motion.div>
+            <motion.div
+              className="max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="card bg-base-100 shadow-xl">
+                <div className="card-body space-y-6">
+                  <h2 className="card-title mb-4">Connect With Us</h2>
+                  <div className="grid gap-4">
+                    <a
+                      href="tel:+918220557520"
+                      className="btn btn-primary btn-lg w-full flex items-center gap-3 normal-case"
+                    >
+                      <Phone className="h-5 w-5" />
+                      Call Us (+91 82205 57520)
+                    </a>
 
-              {/* Contact Info */}
-              <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="card bg-base-100 shadow-xl">
-                  <div className="card-body">
-                    <h2 className="card-title mb-6">Other Ways to Connect</h2>
-                    <div className="space-y-6">
-                      <a
-                        href="mailto:contact@fitgirldev.com"
-                        className="flex items-center gap-4 text-lg hover:text-primary transition-colors"
-                      >
-                        <Mail className="h-6 w-6" />
-                        contact@fitgirldev.com
-                      </a>
-                      <a
-                        href="https://discord.gg/Z2YhDh27"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-4 text-lg hover:text-primary transition-colors"
-                      >
-                        <MessageSquare className="h-6 w-6" />
-                        Join our Discord
-                      </a>
-                      <div className="flex items-center gap-4 text-lg">
-                        <MapPin className="h-6 w-6" />
-                        Bangalore, India
-                      </div>
-                    </div>
+                    <a
+                      href="https://wa.me/918220557520"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-success btn-lg w-full flex items-center gap-3 normal-case"
+                    >
+                      <BsWhatsapp className="h-5 w-5" />
+                      WhatsApp Chat
+                    </a>
+
+                    <a
+                      href="mailto:fitgirlisadev@gmail.com"
+                      className="btn btn-accent btn-lg w-full flex items-center gap-3 normal-case"
+                    >
+                      <Mail className="h-5 w-5" />
+                      Email Us
+                    </a>
+
+                    <a
+                      href="https://github.com/fitgirl-dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-lg w-full flex items-center gap-3 normal-case"
+                    >
+                      <Github className="h-5 w-5" />
+                      Visit our GitHub
+                    </a>
+
+                    <a
+                      href="https://discord.gg/Z2YhDh27"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-info btn-lg w-full flex items-center gap-3 normal-case"
+                    >
+                      <MessageSquare className="h-5 w-5" />
+                      Join our Discord
+                    </a>
                   </div>
                 </div>
-
-                <div className="card bg-base-100 shadow-xl">
-                  <div className="card-body">
-                    <h2 className="card-title mb-4">Quick Links</h2>
-                    <div className="space-y-4">
-                      <a
-                        href="https://forms.gle/UemJF5oCFmtYb8Bf7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline w-full"
-                      >
-                        Submit a Project
-                      </a>
-                      <a
-                        href="https://forms.gle/Yz3yDp47UjHgpqv39"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline w-full"
-                      >
-                        Join as Developer
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

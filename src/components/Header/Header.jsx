@@ -2,6 +2,7 @@ import React from 'react';
 import { Sun, Moon, FileEdit, Mail, Users, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
+import logo from '../../assets/logo.png'
 
 function Header() {
   const [theme, setTheme] = React.useState('light');
@@ -22,7 +23,7 @@ function Header() {
           <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
             <div className="flex-1">
               <Link to="/" className="btn btn-ghost normal-case gap-2">
-                <img src="/src/assets/logo.png" alt="Logo" className="w-8 h-8" />
+                <img src={logo} alt="Logo" className="w-8 h-8" />
                 <span className="text-lg font-medium">Fitgirl is a Dev</span>
               </Link>
             </div>

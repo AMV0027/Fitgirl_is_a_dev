@@ -1,10 +1,32 @@
 [
   {
     "name": "Fitgirl Dev",
-    "role": "Founder & Lead Developer",
-    "bio": "Passionate about building innovative solutions and fostering a community of student developers.",
-    "github": "https://github.com/fitgirl-dev",
-    "linkedin": "https://linkedin.com/in/fitgirl-dev",
-    "portfolio": "https://fitgirl.dev"
+    "github": "fitgirl-dev",
+    "projects": 15,
+    "tagline": "Full-stack developer passionate about building innovative solutions"
+  },
+  {
+    "name": "Sarah Johnson",
+    "github": "sarahj",
+    "projects": 8,
+    "tagline": "Frontend specialist with a love for React and modern UI/UX"
+  },
+  {
+    "name": "Mike Chen",
+    "github": "mikechen-dev",
+    "projects": 12,
+    "tagline": "Backend engineer focused on scalable systems and APIs"
+  },
+  {
+    "name": "Alex Rodriguez",
+    "github": "alexrod",
+    "projects": 6,
+    "tagline": "Mobile app developer with expertise in React Native"
+  },
+  {
+    "name": "Emma Wilson",
+    "github": "emmawilson",
+    "projects": 9,
+    "tagline": "DevOps engineer automating deployment and infrastructure"
   }
 ]
