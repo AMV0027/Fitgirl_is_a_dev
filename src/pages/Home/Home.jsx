@@ -248,7 +248,7 @@ function Home() {
             <img
               src={banner}
               alt="FitGirl is a Dev Banner"
-              className="w-full h-auto rounded-lg"
+              className="w-full min-h-[250px] rounded-lg"
             />
           </motion.div>
         </div>
