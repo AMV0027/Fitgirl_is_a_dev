@@ -6,7 +6,8 @@ import {
   FileEdit,
   Search,
   CreditCard,
-  Rocket
+  Rocket,
+  ArrowRight
 } from 'lucide-react';
 import Fitgirl from '../../assets/fitgirl-front.png';
 import Bannerbg from '../../assets/fitgirl-bg-banner.png';
@@ -29,8 +30,8 @@ const steps = [
   {
     title: 'Pre-payment',
     description: 'Initial amount to Begin',
-    icon: Search,
-    gradient: 'from-green-500 to-emerald-500'
+    icon: CreditCard,
+    gradient: 'from-teal-500 to-cyan-500'
   },
   {
     title: 'Develop',
@@ -45,8 +46,8 @@ const steps = [
     gradient: 'from-pink-500 to-rose-500'
   },
   {
-    title: 'Pay 50%',
-    description: 'Final payment',
+    title: 'Final payment',
+    description: 'Balance amount',
     icon: CreditCard,
     gradient: 'from-teal-500 to-cyan-500'
   },
@@ -129,11 +130,11 @@ function Home() {
               alt="FitGirl is a Dev Banner"
               className="relative w-auto object-center h-[260px] rounded-lg z-20 hover:scale-105 transition-all duration-300 ease-in-out"
             />
-            <div className='absolute md:relative z-20 bottom-0 left-4 h-full flex flex-col justify-between py-5 md:py-0 md:justify-center'>
+            <div className='absolute md:relative z-20 bottom-0 left-3 h-full flex flex-col justify-end py-2 md:py-0 md:justify-center order-1 md:order-0'>
               <h2 className='text-xl sm:text-3xl md:text-4xl font-semibold text-white md:mb-2 bg-black/20 md:bg-transparent rounded-md px-2 md:px-0'>
                 Fitgirl is a Dev
               </h2>
-              <a href="https://discord.gg/Z2YhDh27" target='_blank' rel='noopener noreferrer'>
+              <a href="https://discord.gg/Z2YhDh27" target='_blank' rel='noopener noreferrer' className='hidden md:block '>
                 <button className='flex flex-row items-center justify-center text-white bg-violet-600 rounded-md text-sm md:text-md gap-1 px-1 w-auto cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'>
                   <FaDiscord className='w-6 h-6 shadow' />
                   Discord Community
@@ -204,15 +205,12 @@ function Home() {
                     {index < steps.length - 1 && (
                       <div className="hidden lg:block flex-shrink-0">
                         <motion.div
-                          className="flex items-center"
+                          className="flex items-center justify-center"
                           initial={{ opacity: 0, scaleX: 0 }}
                           animate={{ opacity: 1, scaleX: 1 }}
                           transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                         >
-                          {/* Arrow Line */}
-                          <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary"></div>
-                          {/* Arrow Head */}
-                          <div className="w-0 h-0 border-l-[8px] border-l-secondary border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
+                          <ArrowRight className="w-6 h-6 text-primary" />
                         </motion.div>
                       </div>
                     )}
@@ -221,21 +219,8 @@ function Home() {
               </div>
 
               {/* Mobile Vertical Flow Lines */}
-              <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-6 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-primary opacity-30"></div>
+              <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2 top-6 w-0.5 h-[95%] bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-80"></div>
 
-              {/* Mobile Vertical Arrows */}
-              <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2">
-                {steps.slice(0, -1).map((_, index) => (
-                  <motion.div
-                    key={`mobile-arrow-${index}`}
-                    className="absolute w-0 h-0 border-l-[6px] border-l-primary border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"
-                    style={{ top: `${(index + 1) * 14.28}%` }}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>
