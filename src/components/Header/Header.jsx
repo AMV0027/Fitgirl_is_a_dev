@@ -46,7 +46,7 @@ function Header() {
                 <Mail className="h-5 w-5" />
                 Contact
               </Link>
-              <button
+              {/* <button
                 className="btn btn-ghost btn-circle ml-2"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
@@ -56,7 +56,7 @@ function Header() {
                 ) : (
                   <Sun className="h-5 w-5" />
                 )}
-              </button>
+              </button> */}
             </div>
             {/* Mobile Menu Button */}
             <div className="flex-none lg:hidden">
