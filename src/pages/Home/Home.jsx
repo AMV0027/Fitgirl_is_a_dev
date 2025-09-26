@@ -127,14 +127,14 @@ function Home() {
             <img
               src={Fitgirl}
               alt="FitGirl is a Dev Banner"
-              className="relative w-auto object-center h-[260px] rounded-lg z-20"
+              className="relative w-auto object-center h-[260px] rounded-lg z-20 hover:scale-105 transition-all duration-300 ease-in-out"
             />
             <div className='absolute md:relative z-20 bottom-0 left-4 h-full flex flex-col justify-between py-5 md:py-0 md:justify-center'>
               <h2 className='text-xl sm:text-3xl md:text-4xl font-semibold text-white md:mb-2 bg-black/20 md:bg-transparent rounded-md px-2 md:px-0'>
                 Fitgirl is a Dev
               </h2>
               <a href="https://discord.gg/Z2YhDh27" target='_blank' rel='noopener noreferrer'>
-                <button className='flex flex-row items-center justify-center text-white bg-violet-600 rounded-md text-sm md:text-md gap-1 px-1 w-auto'>
+                <button className='flex flex-row items-center justify-center text-white bg-violet-600 rounded-md text-sm md:text-md gap-1 px-1 w-auto cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'>
                   <FaDiscord className='w-6 h-6 shadow' />
                   Discord Community
                 </button>
